@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'base/base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+{% block content %}
+    <div>
+    {% if data %}
+        <ul>
+        {% for d in data %}
+            <li> Question 1 : {{ d.question1 }}</li>
+            <li> Question 2 : {{ d.question2 }}</li>
+            <li> Question 3 : {{ d.question3 }}</li>
+            <li> Question 4 : {{ d.question4 }}</li>
+            <li> Question 5 : {{ d.question5 }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+    <p>
+        please refresh the page after some minute answers are not still ready
+        {% endif %}
+    </p>
+    </div>
+{% endblock content %}
+</body>
+</html>

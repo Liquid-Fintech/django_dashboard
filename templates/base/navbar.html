@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navbar</title>
+</head>
+<body>
+{% block navbar %}
+    <div style="border-bottom: black solid 3px">{% if user.is_authenticated %}
+    <a href="{% url 'logout' %}">logout</a>
+    <a href="{% url 'create_ticket' %}">create ticket</a>
+        <a href="{% url 'response' %}">response</a>
+    {% else %}
+    <a href="{% url 'login' %}">login</a>
+    <a href="{% url 'register' %}">register</a>
+    {% endif %}
+</div>
+{% endblock navbar %}
+
+</body>
+</html>

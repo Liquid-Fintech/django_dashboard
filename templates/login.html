@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'base/base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+{% block content %}
+    <h2>Login</h2>
+    <form method="post" action="http://127.0.0.1:8000/auth/login/" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+    <p>Forgot password? <a href="{% url 'password-reset' %}">Reset Password</a></p>
+{% endblock content %}
+</body>
+</html>

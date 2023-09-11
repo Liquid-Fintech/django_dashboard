@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block massageblock %}
+<div style="border: black solid 3px; padding-top: 10px; width: 30%;">
+    <div>
+        <ul class="messages">
+        {% for message in messages %}
+            <li style="color: red" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        </ul>
+
+    </div>
+</div>
+{% endblock massageblock %}
+
+</body>
+</html>
